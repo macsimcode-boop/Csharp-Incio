@@ -1,6 +1,3 @@
-# Macsim
-Estudando programação 
-
 using System;
 using System.Globalization;
 

@@ -1,0 +1,84 @@
+  int[,] Valores = new int[3, 3];
+  int soma = 0;
+  int pares = 0;
+  int impares = 0;
+  bool maiorQue50 = true;
+ 
+
+
+
+  for (int i = 0; i < 3; i++)
+  {
+      for (int j = 0; j < 3; j++)
+      {
+          Console.WriteLine("Valor: [" + i + "," + j + "]");
+          Valores[i, j] = int.Parse(Console.ReadLine());
+      }
+
+  }
+
+  int maior = Valores[0, 0];
+  int menor = Valores[0, 0];
+
+  Console.Write("-- A tua Matriz --\n");
+  Console.WriteLine();
+
+  for (int i = 0; i < 3; i++)
+  {
+      for (int j = 0; j < 3; j++)
+      {
+          Console.Write(Valores[i,j] + " ");
+          
+      }
+      Console.WriteLine();
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+      for (int j = 0; j < 3; j++)
+      {
+
+          soma += Valores[i, j];
+
+          if (Valores[i,j] > maior)
+          {
+              maior = Valores[i, j];
+          }
+
+          if (Valores[i, j] < menor)
+          {
+              menor = Valores[i, j];
+          }
+
+          if(Valores[i, j] % 2 == 0)
+          {
+              pares++;
+          }
+          else
+          {
+              impares++;
+          }
+
+      }
+      
+  }
+
+  maiorQue50 = soma > 50;
+
+  double Media = (double)soma / 9;
+
+  Console.WriteLine($"Soma: {soma}");
+  Console.WriteLine($"Média: {Media}");
+  Console.WriteLine($"Maior: {maior}");
+  Console.WriteLine($"Menor: {menor}");
+  Console.WriteLine($"Pares: {pares}");
+  Console.WriteLine($"Impares: {impares}");
+
+  if (maiorQue50)
+  {
+      Console.WriteLine("Soma maior que 50: True");
+  }
+  else
+  {
+      Console.WriteLine("Soma maior que 50: False");
+  }

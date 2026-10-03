@@ -9,7 +9,3 @@ O objetivo deste repositório é praticar e melhorar os meus conhecimentos em:
 - ciclos (for / while)
 - vetores (arrays)
 - bool e operações lógicas
-
-Também posso adicionar pequenos projetos para treino e evolução.
-
-Este repositório vai ser atualizado à medida que vou aprendendo novos conceitos.

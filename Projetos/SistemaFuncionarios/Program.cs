@@ -5,42 +5,45 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Quantos produtos deseja comprar");
-        int QuantidadeP = int.Parse(Console.ReadLine());
 
-        double desconto;
-        double Final;
-
+        int mais = 0;
         double Total = 0;
 
-        for (int i = 0; i < QuantidadeP; i++)
+        Console.WriteLine("Quantos funcionários existem?");
+        int funcionarios = int.Parse(Console.ReadLine());
+
+
+        for (int i = 0; i < funcionarios; i++)
         {
-            Console.WriteLine("Qual o nome do produto?");
+
+            Console.WriteLine($"Digite o nome do {i + 1}º funcionario ");
             string Nome = Console.ReadLine();
 
-            Console.WriteLine("Qual o preco do produto?");
-            double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine($"Quantas horas trabalhou o {Nome} funcionario ");
+            int Horas = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Quantas unidades do produto deseja?");
-            int quantidade = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Quanto ganha por hora o {Nome} funcionario ");
+            double ValorH = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Total += preco * quantidade;
-        }
 
-        if (Total > 100)
-        {
-            desconto = Total * 0.10;
-            Final = Total - desconto;
-        }
-        else
-        {
-            Final = Total;
-            desconto = 0;
-        }
+            double Salario = Horas * ValorH;
 
-        Console.WriteLine($"Total:{Total.ToString("F2", CultureInfo.InvariantCulture)}");
-        Console.WriteLine($"Desconto: {desconto.ToString("F2", CultureInfo.InvariantCulture)}");
-        Console.WriteLine($"Total Final: {Final.ToString("F2", CultureInfo.InvariantCulture)}");
+            Console.WriteLine($"Nome: {Nome}");
+            Console.WriteLine($"Salario: {Salario.ToString("F2", CultureInfo.InvariantCulture)}EUR");
+
+            Total += Salario;
+            
+            if (Salario > 1000)
+            {
+                mais += 1;
+
+            }
+
+
+         }
+
+        Console.WriteLine($"Total pago: {Total.ToString("F2", CultureInfo.InvariantCulture)}EUR");
+        Console.WriteLine($"Quantidade de funcionarios que ganharam mais de 1000EUR:{mais} ");
+
     }
-}
-
+} 
